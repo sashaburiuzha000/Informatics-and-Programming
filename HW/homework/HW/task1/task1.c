@@ -2,6 +2,7 @@
 #include<locale.h>
 #include<math.h>
 #define scale 1000000
+#define rast 40
 
 int main()
 {
@@ -41,7 +42,7 @@ int main()
 	printf("¬ведите тольщину полки:");
 	scanf_s(" %f", &tolshina4);
 	polkaDSP = (d * w * tolshina4)/scale;
-	float kolvopolok = h / 40;
+	float kolvopolok = h / rast;
 	float m;
 	m = (zadDSP * dvp) + ((bokDSP * 2) * dsp) + ((nizDSP * 2) * dsp) + ((dverWood * 2) * wood) + (floor(kolvopolok) * polkaDSP * wood);
 	printf("вес шкафа-%.1f", m);
