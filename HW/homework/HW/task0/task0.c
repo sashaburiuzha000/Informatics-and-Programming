@@ -15,7 +15,7 @@ int main()
 	int x1, y1, r1;
 	scanf_s("%d %d %d", &x1, &y1, &r1);
 
-	int d, diff;
+	int d, diff,d2=2;
 	diff = pow((x1-x), 2) + pow((y1-y), 2);
 	d = sqrt(diff);
 
@@ -25,7 +25,13 @@ int main()
 		if ((r + r1 == d) || (abs(r - r1) == d))
 			printf("окружности касаются");
 		else
-			printf("окружности не касаются");
+			if (((r1 - r) * d2 > (x1 - x) * d2 + (y1 - y) * d2))
+				printf("одна окружность находится в другой");
+			else
+				if ((d = r - r1) && ((r1 - r) * d2 > (x1 - x) * d2 + (y1 - y) * d2))
+					printf("одна окружность находится в другой с внутренним касанием");
+			else
+			printf("окружности не связаны");
 
 			return 0;
 
