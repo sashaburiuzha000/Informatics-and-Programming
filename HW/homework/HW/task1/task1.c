@@ -7,6 +7,7 @@
 int main()
 {
 	setlocale(LC_ALL, "russian");
+
 	int dverWood, polkaDSP, h, d, w, tolshina3 = 1;
 	float zadDSP, bokDSP, nizDSP, tolshina1 = 0.5, tolshina2 = 1.5;
 	int flag = 0;
@@ -23,12 +24,13 @@ int main()
 		printf("введите глубину: ");
 		scanf_s("%d", &d);
 		if (d > 49 && d < 90)
-		flag = 1;
+			flag = 1;
 		else
 			printf("неправильный диапозон\n");
 	} while (flag != 1);
-	 
+
 	int dsp, dvp, wood;
+
 	printf("введите плотность ДСП и ДВП и дерево");
 	scanf_s("%d %d %d", &dsp, &dvp, &wood);
 
@@ -41,11 +43,12 @@ int main()
 
 	printf("Введите тольщину полки:");
 	scanf_s(" %f", &tolshina4);
-	polkaDSP = (d * w * tolshina4)/scale;
+
+	polkaDSP = (d * w * tolshina4) / scale;
 	float kolvopolok = h / rast;
 	float m;
 	m = (zadDSP * dvp) + ((bokDSP * 2) * dsp) + ((nizDSP * 2) * dsp) + ((dverWood * 2) * wood) + (floor(kolvopolok) * polkaDSP * wood);
 	printf("вес шкафа-%.1f", m);
-	return 0;
 
+  return 0;
 }
