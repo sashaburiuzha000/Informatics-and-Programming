@@ -38,18 +38,14 @@ void guess_number() {
 
 	 int nomer, kolvo = 0, x1 = 0, x2 = 1000, flag = 0, ug_n;
 	 char vv;
-	    printf("vvedite chislo: ");
-	    scanf_s("%d", &nomer);
 	 while ((x1 < x2) && (flag == 0)) {
 
-		  ug_n = x1 + ((x2 - x1) / 2);
+		  ug_n = x1 + ((x2 - x1) / 2); 
 
 		  printf("skritoe chislo: %d?\n", ug_n);
 		  scanf_s("%c", &vv, 1);
-
 		  vv = getchar();
 		  kolvo++;
-
 		  switch (vv)
 		  {
 		  case '>': x1 = ug_n;

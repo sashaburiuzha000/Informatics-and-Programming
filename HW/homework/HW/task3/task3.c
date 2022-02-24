@@ -62,11 +62,12 @@ void c_and_b(int *pc_num, int *user_num, int n, int *c_count, int *b_count) {
 
 int main() {
 
+	setlocale(LC_ALL, "russian");
 	int n, user_num, c = 0, b = 0;
 
 	while (true) {
 
-		printf("введите ноемер (от 2 до 5): \n");
+		printf("выбери размер числа (от 2 до 5): \n");
 		scanf_s("%d", &n);
 
 		if ((n >= 2) && (n <= 5))
