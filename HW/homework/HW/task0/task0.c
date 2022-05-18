@@ -1,35 +1,34 @@
-#include<stdio.h>
-#include<locale.h>
-#include<math.h>
+#include <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS
+#define SIZE 10
 
+int main() {
+	int array[SIZE];
+	int count = 0;
+	int newArray[SIZE];
 
-int main()
-{
-	setlocale(LC_ALL, "russian");
+	for (int i = 0; i < SIZE; i++) {
+		array[i] = -5 + rand() % (15 + 1);
+	}
 
-	printf("¬ведите координаты первой окружности и еЄ радиус:\n");
-	int x, y, r;
-	scanf_s("%d %d %d", &x, &y, &r);
+	for (int i = 0; i < SIZE; i++) {
+		printf("nachal_massiv[%d] = %d\n", i, array[i]);
+	}
 
-	printf("¬ведите координаты второй окружности и еЄ радиус:\n");
-	int x1, y1, r1;
-	scanf_s("%d %d %d", &x1, &y1, &r1);
+	for (int i = 1; i < SIZE - 1; i++) {
+		if ((array[i] > array[i - 1]) && (array[i] > array[i + 1])) {
+			newArray[count] = array[i];
+			count++;
+		}
+	}
 
-	int d, diff;
-	diff = pow((x1-x), 2) + pow((y1-y), 2);
-	d = sqrt(diff);
-
-	if ((r + r1 > d) && (r + d > r1) && (r1 + d > r))
-		printf("ќкружности пересекаютс€");
-	else
-		if ((r + r1 == d) || (abs(r - r1) == d))
-			printf("окружности касаютс€");
-		else
-			printf("окружности не касаютс€");
-
-			return 0;
-
-
-
-
+	printf("Local Mamximum = \n");
+	for (int i = 0; i < count; i++) {
+		printf("massiv_max[%d] = %d\n", i + 1, newArray[i]);
+	}
+	return 0;
 }
+
+
+
+
